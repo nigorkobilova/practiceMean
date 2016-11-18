@@ -1,5 +1,7 @@
 <h1>Q &amp; A</h1>
-<form ng-submit='login()'>
-    Name: <input type="text" name="user" ng-model='user.name'>
+<form ng-submit='login(user)' name='myForm'>
+    Name: <input type="text" name="user" ng-model='user' required>
+        <span style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid">
+                <span ng-show="myForm.name.$error.required">Name is required</span></span></p>
     <input type="submit" name="name" value="Enter">
 </form>

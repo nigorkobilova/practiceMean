@@ -1,10 +1,16 @@
-app.controller('questionController', function($scope, questionFactory, $location, $routeParams, $filter) {
+app.controller('questionController', function($scope, $rootScope, questionFactory, $route, $location, $routeParams, $filter) {
 
-    $scope.login = function(data){
-        $scope.user = data
-        console.log($scope.user, 'name in controller');
+    $scope.login = function(user){
+        $rootScope.user = user;
+        console.log($rootScope.user, 'name in controller');
         $location.url('/main');
     };
+
+    $scope.logout = function(){
+        $route.reload();
+        $location.url('/');
+
+    }
 
     app.value('questions', $scope.questions)
 
@@ -19,11 +25,4 @@ app.controller('questionController', function($scope, questionFactory, $location
        $location.url('/main');
        $scope.newQuestion={};
    };
-
-
-   // $scope.filterDate = function(filter_date){
-   //     console.log($scope.filter_date);
-   //     return $filter('date')(filter_date, 'yyyy-MM-dd');
-   // }
-
 });
