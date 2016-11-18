@@ -2,7 +2,7 @@
 <a href="#/newQuestion">Add a Question</a>
 <br>
 <p>
-    Search: <input type="text" name="search">
+    Search: <input type="text" name="search" ng-model='filterData'>
 </p>
 <table>
     <thead>
@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-      <tr ng-repeat='x in questions'>
+      <tr ng-repeat='x in questions | filter: filterData'>
         <td>{{ x.text }}</td>
         <td>{{ x.answers}}</td>
         <td><a href="#/question/{{ x._id }}">Show</a> <a href="#/question/{{ x._id }}/newanswer">Answer</a></td>

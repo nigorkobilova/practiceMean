@@ -2,11 +2,11 @@ app.controller('answerController', function($scope, answerFactory, $location, qu
     console.log('inside answerController');
 
 
-    // answerFactory.index(function(data){
-    //     $scope.answers = data;
-    //     // console.log(questions, 'inside the answers controller');
-    //     console.log($scope.answers = data);
-    // })
+    answerFactory.index(function(data){
+        $scope.answers = data;
+        // console.log(questions, 'inside the answers controller');
+        console.log($scope.answers = data);
+    })
 
    $scope.createAnswer = function(){
        answerFactory.create($scope.newAnswer);
