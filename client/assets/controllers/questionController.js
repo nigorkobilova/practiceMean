@@ -1,5 +1,10 @@
 app.controller('questionController', function($scope, questionFactory, $location, $routeParams, $filter) {
-    // console.log($location, 'this is location!');
+
+    $scope.login = function(data){
+        $scope.user = data
+        console.log($scope.user, 'name in controller');
+        $location.url('/main');
+    };
 
     app.value('questions', $scope.questions)
 
@@ -11,7 +16,7 @@ app.controller('questionController', function($scope, questionFactory, $location
    $scope.create = function(){
        questionFactory.create($scope.newQuestion);
        console.log($scope.newQuestion);
-       $location.url('/');
+       $location.url('/main');
        $scope.newQuestion={};
    };
 

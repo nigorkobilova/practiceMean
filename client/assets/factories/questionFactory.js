@@ -1,12 +1,19 @@
 console.log('Questions Factory');
 
-app.factory('questionFactory', ['$http', function($http) {
+app.factory('questionFactory', ['$http', function($http, $rootScope) {
   // constructor for our factory
   var questions = [];
   var question = {};
 
+
   function QuestionFactory(){
     var _this = this;
+
+    // this.setUser = function(user, callback){
+    //     $rootScope.user = user;
+    //     console.log($rootScope.user, 'user in factory');
+    //     callback($rootScope.user);
+    // }
 
     this.create = function(newQuestion,callback){
         console.log(newQuestion, 'inside factory');
@@ -35,10 +42,6 @@ app.factory('questionFactory', ['$http', function($http) {
     //     callback(current_user);
     // }
     //
-    // this.set_user = function(new_user, callback){
-    //     current_user = new_user;
-    //     callback(current_user);
-    // }
 
   }
   console.log(new QuestionFactory());

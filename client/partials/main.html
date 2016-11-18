@@ -1,4 +1,4 @@
-<h1>Hi!</h1>
+<h1>Hi, {{user.name}}</h1>
 <a href="#/newQuestion">Add a Question</a>
 <br>
 <p>
@@ -16,7 +16,7 @@
       <tr ng-repeat='x in questions'>
         <td>{{ x.text }}</td>
         <td>{{ x.answers}}</td>
-        <td><a href="#/question/{{ x._id }}">Show</a> <a href="#question/{{ x._id }}/newAnswer">Answer</a></td>
+        <td><a href="#/question/{{ x._id }}">Show</a> <a href="#/question/{{ x._id }}/newanswer">Answer</a></td>
       </tr>
     </tbody>
 </table>

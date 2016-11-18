@@ -5,6 +5,10 @@ var app = angular.module('app', ['ngRoute']);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
+            templateUrl: 'partials/login.html',
+            controller: 'questionController',
+        })
+        .when('/main', {
             templateUrl: 'partials/main.html',
             controller: 'questionController',
         })
@@ -14,11 +18,11 @@ app.config(function ($routeProvider) {
         })
         .when('/question/:id', {
             templateUrl: 'partials/show.html',
-            controller: 'questionController'
+            controller: 'questionController',
         })
-        .when('/question/:id/newAnswer', {
+        .when('/question/:id/newanswer', {
             templateUrl: 'partials/newAnswer.html',
-            controller: 'answerController'
+            controller: 'answerController',
         })
         .otherwise('/')
 });
