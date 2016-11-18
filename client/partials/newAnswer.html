@@ -1,5 +1,6 @@
 <div >
-    <a href="#/main">Home</a> | <a href="#/question/{{ x._question._id }}">Go back to Question</a><br>
+
+    <a href="#/main">Home</a> | <a href="#/question/{{ questions._id }}">Go back to Question</a><br>
     <a href="#/">Logout</a>
 
     <!-- <h1 ng-repeat='x in questions'>{{ x.text }}</h1>
@@ -11,6 +12,6 @@
         <p>
             Supporting details for your answer(optional): <input type="text" name="details" ng-model='newAnswer.details'>
         </p>
-        <input type="button" name="cancel" value="Cancel">
+        <input type="button" name="cancel" value="Cancel" ng-click='cancel()'>
         <input type="submit" name="submit" value="Submit">
     </form>

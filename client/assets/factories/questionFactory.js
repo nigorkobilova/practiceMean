@@ -29,6 +29,14 @@ app.factory('questionFactory', ['$http', function($http, $rootScope) {
         questions = returned_data.data;
         callback(questions);
       });
+
+    this.show = function(id, question, callback){
+        console.log(id, 'received from SHOW in Factory');
+        $http.get('/questions/'+id).then(function(returned_data){
+            question = returned_data.data;
+            callback(question);
+        })
+    }
  //Note: this can be shortened to $http.get('/friends').then(callback);
  //But only if you only want to run the callback from the controller.
     };

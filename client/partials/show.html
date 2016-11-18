@@ -1,5 +1,5 @@
-<a href="#/main">Home</a> | <a href="#">Answer this Question</a><br>
+<a href="#/main">Home</a> | <a href="#/question/{{ question._id }}/newanswer">Answer this Question</a><br>
 <a href="#/">Logout</a>
 
-<h1 ng-repeat='x in questions'>{{ x.text }}</h1>
-<h5>{{ x.description }}</h5>
+<h1>{{ question.text}}</h1>
+<h3>{{ question.description }}</h5>

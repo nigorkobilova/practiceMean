@@ -12,7 +12,11 @@ app.controller('questionController', function($scope, $rootScope, questionFactor
 
     }
 
-    app.value('questions', $scope.questions)
+    $scope.cancel = function(){
+        $location.url('/main')
+    }
+
+    app.value('allQuestions', $scope.questions)
 
     questionFactory.index(function(data){
         $scope.questions = data;
@@ -25,4 +29,11 @@ app.controller('questionController', function($scope, $rootScope, questionFactor
        $location.url('/main');
        $scope.newQuestion={};
    };
+
+
+   questionFactory.show($routeParams.id, $scope.question, function(data){
+       $scope.question = data;
+       console.log($scope.question);
+   })
+
 });

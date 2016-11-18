@@ -1,13 +1,15 @@
 <a href="#/main">Home</a>
 <a href="#/">Logout</a>
 <h1>New Question</h1>
-<form ng-submit='create()'>
+<form ng-submit='create()' name='newForm'>
     <p>
-        Question: <input type="text" name="question" ng-model="newQuestion.question">
+        Question: <input type="text" name="question" ng-model="newQuestion.question" required=">10">
+        <span style="color:red" ng-show="newForm.name.$dirty && newForm.name.$invalid">
+                <span ng-show="newForm.name.$error.required">Question Field should not be empty</span></span></p>
     </p>
     <p>
         Description: <input type="text" name="description" ng-model="newQuestion.description">
     </p>
-    <input type="button" name="cancel" value="Cancel">
+    <input type="button" name="cancel" value="Cancel" ng-click='cancel()'>
     <input type="submit" name="submit" value="Submit">
 </form>

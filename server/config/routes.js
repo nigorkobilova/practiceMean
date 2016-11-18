@@ -8,5 +8,6 @@ module.exports = function(app){
     app.post('/questions', questions.create);
     app.get('/answers', answers.index);
     app.post('/answers', answers.create);
+    app.get('/questions/:id', questions.show)
     // app.post('/users', users.create)
 }

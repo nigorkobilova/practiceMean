@@ -1,6 +1,12 @@
-app.controller('answerController', function($scope, answerFactory, $location, questions) {
+app.controller('answerController', function($scope, answerFactory, $location, Allquestions) {
     console.log('inside answerController');
 
+    $scope.questions = Allquestions;
+    console.log($scope.questions, 'question in asnwer');
+
+    $scope.cancel = function(){
+        $location.url('/main')
+    }
 
     answerFactory.index(function(data){
         $scope.answers = data;
